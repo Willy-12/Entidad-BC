@@ -1,24 +1,8 @@
-# TJ Informática - Sitio Web Oficial
+# Entidad Financiera 
 
-Sitio web institucional desarrollado para el microemprendimiento **TJ Informática**, dedicado a servicios técnicos informáticos en San Salvador de Jujuy, Argentina.
-
----
-
-## 🚀 ¿Qué incluye este proyecto?
-- Página de inicio con presentación, servicios y forma de trabajo.
-- Sección detallada de servicios: reparación, mantenimiento, actualización, instalación de software, armado de equipos, redes y recuperación de datos.
-- Formulario de contacto que envía consultas directamente a WhatsApp.
-- Mapa de ubicación en Barrio Cuyaya.
-- Páginas legales:
-  - Términos y Condiciones
-  - Política de Privacidad
-  - Mapa del Sitio
----
-## 🛠️ Tecnologías utilizadas
-- HTML5
-- CSS3
+Una entidad financiera es una institución autorizada que actúa como intermediaria entre quienes tienen capacidad de  financiación
 - Bootstrap 5.3.3
 - JavaScript
-- Fuente: Inter (Google Fonts)
+- Fuente: Inter 
 - Íconos embebidos
 - Diseño totalmente adaptable a celulares y escritorio
