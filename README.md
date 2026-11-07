@@ -1,8 +1,11 @@
 # Entidad Financiera 
 
 Una entidad financiera es una institución autorizada que actúa como intermediaria entre quienes tienen capacidad de  financiación
-- Bootstrap 5.3.3
+- Bootstrap 4.3.13.300
 - JavaScript
-- Fuente: Inter 
+- Fuente: Interunter
 - Íconos embebidos
-- Diseño totalmente adaptable a celulares y escritorio
+- Diseño diseñados
+- Servicios profesionales
+- Disponible 24/7
+- Compromiso primero 
